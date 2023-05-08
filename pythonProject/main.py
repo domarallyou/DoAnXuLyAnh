@@ -44,7 +44,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 y_train = to_categorical(y_train, 43)
 y_test = to_categorical(y_test, 43)
 
-# Xây dựng mô hình
+# Xây dựng mô hình CNN
 model = Sequential()
 model.add(Conv2D(filters=32, kernel_size=(5, 5), activation='relu', input_shape=X_train.shape[1:]))
 model.add(Conv2D(filters=32, kernel_size=(5, 5), activation='relu'))

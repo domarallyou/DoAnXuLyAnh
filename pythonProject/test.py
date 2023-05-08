@@ -57,9 +57,9 @@ classes = {0: 'Tốc độ tối đa (20km/h)',
 
 # Tạo giao diện
 top = tk.Tk()
-top.geometry('800x600')
+top.geometry('800x800')
 top.title('Nhận diện biển báo GT')
-top.configure(background='#CDCDCD')
+top.configure(background='#008080')
 
 label = Label(top, background='#CDCDCD', font=('arial', 15, 'bold'))
 sign_image = Label(top)
@@ -93,7 +93,6 @@ def upload_image():
         uploaded = Image.open(file_path)
         uploaded.thumbnail(((top.winfo_width() / 2.25), (top.winfo_height() / 2.25)))
         im = ImageTk.PhotoImage(uploaded)
-
         sign_image.configure(image=im)
         sign_image.image = im
         label.configure(text='')
@@ -103,13 +102,13 @@ def upload_image():
 
 
 upload = Button(top, text="Tải ảnh lên", command=upload_image, padx=10, pady=5)
-upload.configure(background='#364156', foreground='white', font=('arial', 10, 'bold'))
+upload.configure(background='#808000', foreground='white', font=('arial', 10, 'bold'))
 
 upload.pack(side=BOTTOM, pady=50)
 sign_image.pack(side=BOTTOM, expand=True)
 label.pack(side=BOTTOM, expand=True)
 heading = Label(top, text="Nhận diện biển GT qua ảnh\n", pady=20, font=('arial', 20, 'bold'))
 
-heading.configure(background='#CDCDCD', foreground='#364156')
+heading.configure(background='#008080', foreground='#364156')
 heading.pack()
 top.mainloop()
